@@ -22,6 +22,8 @@ namespace FactoredNumbersReceiver
 			var storageQueueName = ConfigurationManager.AppSettings["StorageQueueName"];
 			var queue = queueClient.GetQueueReference(storageQueueName);
 			Console.Title = $"Azure Storage Queue Receiver of '{storageQueueName}'";
+			Console.WriteLine("Azure Storage Queue: {0}", storageQueueName);
+			Console.WriteLine();
 			queue.CreateIfNotExists();
 			int messageNumber = 1;
 			DateTime startDate = DateTime.Now;
