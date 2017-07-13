@@ -5,19 +5,19 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBSender", "ASBSender\ASBSender.csproj", "{7EB04125-0CD7-4F54-8947-B151E30C6A44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllProductsReceiver", "AllProductsReceiver\AllProductsReceiver.csproj", "{905293D6-95C8-407D-BE6F-973C6219E401}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBAllProductsReceiver", "AllProductsReceiver\ASBAllProductsReceiver.csproj", "{905293D6-95C8-407D-BE6F-973C6219E401}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBReceiver", "ASBReceiver\ASBReceiver.csproj", "{5C858ED5-88E5-4466-A8E0-9B0FF7D1E15C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargeProductsReceiver", "LargeProductsReceiver\LargeProductsReceiver.csproj", "{F657B1F8-939C-47B6-A38E-7EDC17DEC5F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBLargeProductsReceiver", "LargeProductsReceiver\ASBLargeProductsReceiver.csproj", "{F657B1F8-939C-47B6-A38E-7EDC17DEC5F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpensiveProductsReceiver", "ExpensiveProductsReceiver\ExpensiveProductsReceiver.csproj", "{82BF6920-E311-4594-A305-277FC5B2A109}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBExpensiveProductsReceiver", "ExpensiveProductsReceiver\ASBExpensiveProductsReceiver.csproj", "{82BF6920-E311-4594-A305-277FC5B2A109}"
 EndProject
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ServiceBusSetup", "ServiceBusSetup\ServiceBusSetup.deployproj", "{577FDB37-895E-4D1C-8434-D72AF0969ABB}"
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ASBAzureSetup", "ServiceBusSetup\ASBAzureSetup.deployproj", "{577FDB37-895E-4D1C-8434-D72AF0969ABB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightColourProductsReceiver", "LightColourProductsReceiver\LightColourProductsReceiver.csproj", "{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBLightColourProductsReceiver", "LightColourProductsReceiver\ASBLightColourProductsReceiver.csproj", "{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoredNumbersReceiver", "FactoredNumbersReceiver\FactoredNumbersReceiver.csproj", "{7D538CED-88C2-46EB-824B-85A8784CAA34}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASQFactoredNumbersReceiver", "FactoredNumbersReceiver\ASQFactoredNumbersReceiver.csproj", "{7D538CED-88C2-46EB-824B-85A8784CAA34}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{111C4D57-C997-40D7-B1D4-9862B4660888}"
 	ProjectSection(SolutionItems) = preProject
