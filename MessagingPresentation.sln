@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LargeProductsReceiver", "La
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpensiveProductsReceiver", "ExpensiveProductsReceiver\ExpensiveProductsReceiver.csproj", "{82BF6920-E311-4594-A305-277FC5B2A109}"
 EndProject
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ServiceBusSetup", "ServiceBusSetup\ServiceBusSetup.deployproj", "{577FDB37-895E-4D1C-8434-D72AF0969ABB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{82BF6920-E311-4594-A305-277FC5B2A109}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82BF6920-E311-4594-A305-277FC5B2A109}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82BF6920-E311-4594-A305-277FC5B2A109}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,242 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentName": {
+      "type": "string"
+    },
+    "primaryKey": {
+      "type": "string"
+    },
+    "secondaryKey": {
+      "type": "string"
+    }
+  },
+  "variables": {
+    "ServiceBus_ReadWriteKey": "[concat(parameters('environmentName'), '/ReadWrite')]",
+    "servicebus_namespace": "[parameters('environmentName')]",
+    "servicebus_topic_name": "[concat(parameters('environmentName'), '/products')]",
+    "servicebus_topic": "['products']",
+    "subscriptions_AllProducts_name": "[concat(parameters('environmentName'), '/products/AllProducts')]",
+    "subscriptions_ExpensiveProducts_name": "[concat(parameters('environmentName'), '/products/ExpensiveProducts')]",
+    "subscriptions_LargeProducts_name": "[concat(parameters('environmentName'), '/products/LargeProducts')]",
+    "subscriptions_LightColours_name": "[concat(parameters('environmentName'), '/products/LightProducts')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.ServiceBus/namespaces",
+      "sku": {
+        "name": "Standard",
+        "tier": "Standard"
+      },
+      "kind": "Messaging",
+      "name": "[variables('servicebus_namespace')]",
+      "apiVersion": "2015-08-01",
+      "location": "UK South",
+      "tags": {},
+      "scale": null,
+      "properties": {
+        "provisioningState": "Succeeded",
+        "status": "Active",
+        "createdAt": "2017-07-12T04:46:06.353Z",
+        "serviceBusEndpoint": "[concat('https://', variables('servicebus_namespace'),'.servicebus.windows.net:443/')]",
+        "enabled": true,
+        "updatedAt": "2017-07-12T05:17:33.37Z"
+      },
+      "dependsOn": []
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/AuthorizationRules",
+      "name": "[variables('ServiceBus_ReadWriteKey')]",
+      "apiVersion": "2015-08-01",
+      "scale": null,
+      "properties": {
+        "keyName": "ReadWrite",
+        "claimType": "SharedAccessKey",
+        "claimValue": "None",
+        "primaryKey": "[parameters('primaryKey')]",
+        "secondaryKey": "[parameters('secondaryKey')]",
+        "rights": [
+          "Listen",
+          "Send"
+        ],
+        "revision": -1
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces', variables('servicebus_namespace'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/topics",
+      "name": "[variables('servicebus_topic_name')]",
+      "apiVersion": "2015-08-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+        "maxSizeInMegabytes": 1024,
+        "requiresDuplicateDetection": false,
+        "enableBatchedOperations": true,
+        "sizeInBytes": 35446,
+        "filteringMessagesBeforePublishing": false,
+        "isAnonymousAccessible": false,
+        "status": "Active",
+        "createdAt": "2017-07-12T07:07:27.974807Z",
+        "updatedAt": "2017-07-12T07:07:27.974807Z",
+        "accessedAt": "2017-07-12T09:24:31.0950669Z",
+        "supportOrdering": true,
+        "countDetails": {
+          "activeMessageCount": 0,
+          "deadLetterMessageCount": 0,
+          "scheduledMessageCount": 0,
+          "transferMessageCount": 0,
+          "transferDeadLetterMessageCount": 0
+        },
+        "subscriptionCount": 4,
+        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+        "enablePartitioning": false,
+        "isExpress": false,
+        "enableSubscriptionPartitioning": false,
+        "enableExpress": false
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces', variables('servicebus_namespace'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+      "name": "[variables('subscriptions_AllProducts_name')]",
+      "apiVersion": "2017-04-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "lockDuration": "00:01:00",
+        "requiresSession": false,
+        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+        "deadLetteringOnMessageExpiration": false,
+        "deadLetteringOnFilterEvaluationExceptions": false,
+        "messageCount": 0,
+        "maxDeliveryCount": 10,
+        "enableBatchedOperations": false,
+        "status": "Active",
+        "countDetails": {
+          "activeMessageCount": 0,
+          "deadLetterMessageCount": 0,
+          "scheduledMessageCount": 0,
+          "transferMessageCount": 0,
+          "transferDeadLetterMessageCount": 0
+        },
+        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+        "entityAvailabilityStatus": "Available"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics', variables('servicebus_namespace'), variables('servicebus_topic'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+      "name": "[variables('subscriptions_ExpensiveProducts_name')]",
+      "apiVersion": "2017-04-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "lockDuration": "00:01:00",
+        "requiresSession": false,
+        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+        "deadLetteringOnMessageExpiration": false,
+        "deadLetteringOnFilterEvaluationExceptions": false,
+        "messageCount": 0,
+        "maxDeliveryCount": 10,
+        "enableBatchedOperations": false,
+        "status": "Active",
+        "createdAt": "2017-07-12T09:09:14.6391047Z",
+        "updatedAt": "2017-07-12T09:09:14.6391047Z",
+        "accessedAt": "2017-07-12T09:24:31.0950669Z",
+        "countDetails": {
+          "activeMessageCount": 0,
+          "deadLetterMessageCount": 0,
+          "scheduledMessageCount": 0,
+          "transferMessageCount": 0,
+          "transferDeadLetterMessageCount": 0
+        },
+        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+        "entityAvailabilityStatus": "Available"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics', variables('servicebus_namespace'), variables('servicebus_topic'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+      "name": "[variables('subscriptions_LargeProducts_name')]",
+      "apiVersion": "2017-04-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "lockDuration": "00:01:00",
+        "requiresSession": false,
+        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+        "deadLetteringOnMessageExpiration": false,
+        "deadLetteringOnFilterEvaluationExceptions": false,
+        "messageCount": 0,
+        "maxDeliveryCount": 10,
+        "enableBatchedOperations": false,
+        "status": "Active",
+        "createdAt": "2017-07-12T08:48:04.4511667Z",
+        "updatedAt": "2017-07-12T08:48:04.4511667Z",
+        "accessedAt": "2017-07-12T09:24:31.0481973Z",
+        "countDetails": {
+          "activeMessageCount": 0,
+          "deadLetterMessageCount": 0,
+          "scheduledMessageCount": 0,
+          "transferMessageCount": 0,
+          "transferDeadLetterMessageCount": 0
+        },
+        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+        "entityAvailabilityStatus": "Available"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics', variables('servicebus_namespace'), variables('servicebus_topic'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
+      "name": "[variables('subscriptions_LightColours_name')]",
+      "apiVersion": "2017-04-01",
+      "location": "UK South",
+      "scale": null,
+      "properties": {
+        "lockDuration": "00:01:00",
+        "requiresSession": false,
+        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
+        "deadLetteringOnMessageExpiration": false,
+        "deadLetteringOnFilterEvaluationExceptions": false,
+        "messageCount": 130,
+        "maxDeliveryCount": 10,
+        "enableBatchedOperations": false,
+        "status": "Active",
+        "createdAt": "2017-07-12T09:08:08.5238943Z",
+        "updatedAt": "2017-07-12T09:08:08.5238943Z",
+        "accessedAt": "2017-07-12T09:08:08.5238943Z",
+        "countDetails": {
+          "activeMessageCount": 130,
+          "deadLetterMessageCount": 0,
+          "scheduledMessageCount": 0,
+          "transferMessageCount": 0,
+          "transferDeadLetterMessageCount": 0
+        },
+        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
+        "entityAvailabilityStatus": "Available"
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics', variables('servicebus_namespace'), variables('servicebus_topic'))]"
+      ]
+    }
+  ],
+  "outputs": {
+    "environmentName": {
+      "type": "string",
+      "value": "[parameters('environmentName')]"
+    }
+  }
+}
