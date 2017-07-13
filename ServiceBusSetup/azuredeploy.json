@@ -18,9 +18,17 @@
     "servicebus_topic_name": "[concat(parameters('environmentName'), '/products')]",
     "servicebus_topic": "['products']",
     "subscriptions_AllProducts_name": "[concat(parameters('environmentName'), '/products/AllProducts')]",
+    "subscriptions_AllProducts": "['AllProducts']",
     "subscriptions_ExpensiveProducts_name": "[concat(parameters('environmentName'), '/products/ExpensiveProducts')]",
+    "subscriptions_ExpensiveProducts": "['ExpensiveProducts']",
     "subscriptions_LargeProducts_name": "[concat(parameters('environmentName'), '/products/LargeProducts')]",
-    "subscriptions_LightColours_name": "[concat(parameters('environmentName'), '/products/LightProducts')]"
+    "subscriptions_LargeProducts": "['LargeProducts']",
+    "subscriptions_LightColourProducts_name": "[concat(parameters('environmentName'), '/products/LightProducts')]",
+    "subscriptions_LightColourProducts": "['LightProducts']",
+    "allProductsRuleName": "[concat(parameters('environmentName'), '/products/AllProducts/AllProductsRule')]",
+    "expensiveProductsRuleName": "[concat(parameters('environmentName'), '/products/ExpensiveProducts/ExpensiveProductsRule')]",
+    "largeProductsRuleName": "[concat(parameters('environmentName'), '/products/LargeProducts/LargeProductsRule')]",
+    "lightColourProductsRuleName": "[concat(parameters('environmentName'), '/products/LightProducts/LightColourProductsRule')]"
   },
   "resources": [
     {
@@ -134,6 +142,25 @@
       ]
     },
     {
+      "apiVersion": "2017-04-01",
+      "name": "[variables('allProductsRuleName')]",
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions/Rules",
+      "dependsOn": [
+        "[variables('subscriptions_AllProducts_name')]"
+      ],
+      "properties": {
+        "filterType": "SqlFilter",
+        "sqlFilter": {
+          "sqlExpression": "1 = 1",
+          "requiresPreprocessing": "false"
+        },
+        "CorrelationFilter": {}
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics/subscriptions', variables('servicebus_namespace'), variables('servicebus_topic'), variables('subscriptions_AllProducts'))]"
+      ]
+    },
+    {
       "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
       "name": "[variables('subscriptions_ExpensiveProducts_name')]",
       "apiVersion": "2017-04-01",
@@ -164,6 +191,25 @@
       },
       "dependsOn": [
         "[resourceId('Microsoft.ServiceBus/namespaces/topics', variables('servicebus_namespace'), variables('servicebus_topic'))]"
+      ]
+    },
+    {
+      "apiVersion": "2017-04-01",
+      "name": "[variables('expensiveProductsRuleName')]",
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions/Rules",
+      "dependsOn": [
+        "[variables('subscriptions_ExpensiveProducts_name')]"
+      ],
+      "properties": {
+        "filterType": "SqlFilter",
+        "sqlFilter": {
+          "sqlExpression": "Cost > 80",
+          "requiresPreprocessing": "false"
+        },
+        "CorrelationFilter": {}
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics/subscriptions', variables('servicebus_namespace'), variables('servicebus_topic'), variables('subscriptions_ExpensiveProducts'))]"
       ]
     },
     {
@@ -200,8 +246,27 @@
       ]
     },
     {
+      "apiVersion": "2017-04-01",
+      "name": "[variables('LargeProductsRuleName')]",
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions/Rules",
+      "dependsOn": [
+        "[variables('subscriptions_LargeProducts_name')]"
+      ],
+      "properties": {
+        "filterType": "SqlFilter",
+        "sqlFilter": {
+          "sqlExpression": "Size = 'Large'",
+          "requiresPreprocessing": "false"
+        },
+        "CorrelationFilter": {}
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics/subscriptions', variables('servicebus_namespace'), variables('servicebus_topic'), variables('subscriptions_LargeProducts'))]"
+      ]
+    },
+    {
       "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions",
-      "name": "[variables('subscriptions_LightColours_name')]",
+      "name": "[variables('subscriptions_LightColourProducts_name')]",
       "apiVersion": "2017-04-01",
       "location": "UK South",
       "scale": null,
@@ -230,6 +295,25 @@
       },
       "dependsOn": [
         "[resourceId('Microsoft.ServiceBus/namespaces/topics', variables('servicebus_namespace'), variables('servicebus_topic'))]"
+      ]
+    },
+    {
+      "apiVersion": "2017-04-01",
+      "name": "[variables('LightColourProductsRuleName')]",
+      "type": "Microsoft.ServiceBus/namespaces/topics/subscriptions/Rules",
+      "dependsOn": [
+        "[variables('subscriptions_LightColourProducts_name')]"
+      ],
+      "properties": {
+        "filterType": "SqlFilter",
+        "sqlFilter": {
+          "sqlExpression": "Colour = 'White' OR Colour = 'Yellow' OR Colour = 'Orange'",
+          "requiresPreprocessing": "false"
+        },
+        "CorrelationFilter": {}
+      },
+      "dependsOn": [
+        "[resourceId('Microsoft.ServiceBus/namespaces/topics/subscriptions', variables('servicebus_namespace'), variables('servicebus_topic'), variables('subscriptions_LightColourProducts'))]"
       ]
     }
   ],

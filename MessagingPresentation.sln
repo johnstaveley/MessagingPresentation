@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpensiveProductsReceiver",
 EndProject
 Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ServiceBusSetup", "ServiceBusSetup\ServiceBusSetup.deployproj", "{577FDB37-895E-4D1C-8434-D72AF0969ABB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightColourProductsReceiver", "LightColourProductsReceiver\LightColourProductsReceiver.csproj", "{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{577FDB37-895E-4D1C-8434-D72AF0969ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

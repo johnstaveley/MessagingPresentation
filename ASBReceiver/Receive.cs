@@ -11,7 +11,7 @@ namespace ASBReceiver
 
 			string TopicName = "Products";
 			string subscriptionName = ConfigurationManager.AppSettings["SubscriptionName"];
-			Console.Title = $"Azure Service Bus Message Receiver on topic subscription '{subscriptionName}'";
+			Console.Title = $"ASB Receiver of '{subscriptionName}'";
 
 			Console.WriteLine("Subscription: {0}", subscriptionName);
 			Console.WriteLine();
