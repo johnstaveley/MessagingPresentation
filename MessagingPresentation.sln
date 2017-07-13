@@ -26,6 +26,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{111C
 		Scripts\Hit Azure Apis.ps1 = Scripts\Hit Azure Apis.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitSender", "RabbitSender\RabbitSender.csproj", "{D9882A9A-455D-458B-ABA4-CB5FE643F472}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9882A9A-455D-458B-ABA4-CB5FE643F472}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9882A9A-455D-458B-ABA4-CB5FE643F472}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9882A9A-455D-458B-ABA4-CB5FE643F472}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9882A9A-455D-458B-ABA4-CB5FE643F472}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
