@@ -17,6 +17,8 @@ Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "ServiceBusSetup", "ServiceB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightColourProductsReceiver", "LightColourProductsReceiver\LightColourProductsReceiver.csproj", "{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoredNumbersReceiver", "FactoredNumbersReceiver\FactoredNumbersReceiver.csproj", "{7D538CED-88C2-46EB-824B-85A8784CAA34}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA2EE31-8B48-47FB-B476-0D30A17B35C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D538CED-88C2-46EB-824B-85A8784CAA34}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
