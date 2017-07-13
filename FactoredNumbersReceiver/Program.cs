@@ -27,14 +27,14 @@ namespace FactoredNumbersReceiver
 			DateTime startDate = DateTime.Now;
 			do
 			{
-				var messages = queue.GetMessages(32, TimeSpan.FromMinutes(2), null, null);
+				var messages = queue.GetMessages(32, TimeSpan.FromMinutes(2));
 				foreach (var message in messages)
 				{
 					// if processing was not possible, delete the messagecheck for unprocessable messages
 					if (message.DequeueCount < 5)
 					{
 						var timeElapsed = DateTime.Now - startDate;
-						Console.WriteLine($"#{messageNumber} {timeElapsed.Minutes * 60 + timeElapsed.Seconds} seconds: {message.AsString}");
+						Console.WriteLine($"#{messageNumber} @ {timeElapsed.Minutes * 60 + timeElapsed.Seconds} seconds: {message.AsString}");
 					}
 
 					// delete message so that it becomes invisible for other workers
