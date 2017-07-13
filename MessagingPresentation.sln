@@ -19,6 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LightColourProductsReceiver
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FactoredNumbersReceiver", "FactoredNumbersReceiver\FactoredNumbersReceiver.csproj", "{7D538CED-88C2-46EB-824B-85A8784CAA34}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{111C4D57-C997-40D7-B1D4-9862B4660888}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Calculate Factors.txt = Scripts\Calculate Factors.txt
+		Configure RabbitMQ.ps1 = Configure RabbitMQ.ps1
+		Scripts\Hit Azure Apis.ps1 = Scripts\Hit Azure Apis.ps1
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

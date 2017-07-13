@@ -56,7 +56,7 @@
     {
       "type": "Microsoft.ServiceBus/namespaces/AuthorizationRules",
       "name": "[variables('ServiceBus_ReadWriteKey')]",
-      "apiVersion": "2015-08-01",
+      "apiVersion": "2014-09-01",
       "scale": null,
       "properties": {
         "keyName": "ReadWrite",

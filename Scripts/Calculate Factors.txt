@@ -1,0 +1,39 @@
+using System.Net;
+using System.Threading;
+
+public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
+{
+    log.Info("C# HTTP trigger function processed a request.");
+
+    // parse query parameter
+    long? number = Convert.ToInt64(req.GetQueryNameValuePairs()
+        .FirstOrDefault(q => string.Compare(q.Key, "number", true) == 0)
+        .Value);
+
+    // Get request body
+    dynamic data = await req.Content.ReadAsAsync<object>();
+
+    // Set name to query string or body data
+    number = number == 0 ? data?.number : null;
+
+    var factors = Factor(number.Value);
+
+    var returnString = "Hello " + number.Value.ToString() + " you have " + factors.Count() + " factors. The factors are: ";
+    factors.OrderBy(b => b).ToList().ForEach(a => returnString += a.ToString() + ", ");
+    Thread.Sleep(500);
+    return req.CreateResponse(HttpStatusCode.OK, returnString.Trim(' ').Trim(','));
+}
+
+public static List<long> Factor(long number) {
+    List<long> factors = new List<long>();
+    long max = (long) Math.Sqrt(number);  //round down
+    for(long factor = 1; factor <= max; ++factor) { //test from 1 to the square root, or the int below it, inclusive.
+        if(number % factor == 0) {
+            factors.Add(factor);
+            if(factor != number/factor) { // Don't add the square root twice!  Thanks Jon
+                factors.Add(number/factor);
+            }
+        }
+    }
+    return factors;
+}
