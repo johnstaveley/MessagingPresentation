@@ -22,11 +22,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{111C4D57-C997-40D7-B1D4-9862B4660888}"
 	ProjectSection(SolutionItems) = preProject
 		Scripts\Calculate Factors.txt = Scripts\Calculate Factors.txt
-		Configure RabbitMQ.ps1 = Configure RabbitMQ.ps1
+		Scripts\Configure RabbitMQ.ps1 = Scripts\Configure RabbitMQ.ps1
 		Scripts\Hit Azure Apis.ps1 = Scripts\Hit Azure Apis.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitSender", "RabbitSender\RabbitSender.csproj", "{D9882A9A-455D-458B-ABA4-CB5FE643F472}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RabbitSender", "RabbitSender\RabbitSender.csproj", "{D9882A9A-455D-458B-ABA4-CB5FE643F472}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{20429D3D-386A-45C4-882D-EAEC58B1C3E4}"
 	ProjectSection(SolutionItems) = preProject
