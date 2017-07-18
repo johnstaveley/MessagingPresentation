@@ -2,8 +2,6 @@
 using Microsoft.WindowsAzure.Storage.Auth;
 using System;
 using System.Threading;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using System.Configuration;
 
 namespace FactoredNumbersReceiver
@@ -11,7 +9,7 @@ namespace FactoredNumbersReceiver
 	class Program
 	{
 
-		static void Main(string[] args)
+		static void Main()
 		{
 			var storageAccountKey = ConfigurationManager.AppSettings["StorageAccountKey"];
 			if (storageAccountKey == "CHANGEME") { throw new Exception("You need to set the storage account key for this demo");}

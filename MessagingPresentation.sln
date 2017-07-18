@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{111C
 	ProjectSection(SolutionItems) = preProject
 		Scripts\Calculate Factors.txt = Scripts\Calculate Factors.txt
 		Scripts\Configure RabbitMQ.ps1 = Scripts\Configure RabbitMQ.ps1
+		Scripts\Demo Notes.doc = Scripts\Demo Notes.doc
 		Scripts\Hit Azure Apis.ps1 = Scripts\Hit Azure Apis.ps1
 	EndProjectSection
 EndProject

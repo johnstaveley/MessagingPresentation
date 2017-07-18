@@ -12,7 +12,7 @@ Supporting files and code for messaging presentation at Leeds Sharp 27/07/2017
 * Press space to send the messages to the queues in ASBSender and watch them appear in the receivers
 
 ## Demo 3: RabbitMQ on Docker
-* Install docker locally. 
-* TODO: Configure RabbitMQ on docker
+* Install docker locally
+* Configure RabbitMQ on docker (See Demo Notes.doc)
 * Run both projects RabbitSender and RabbitReceiver
 * Watch a subset of the messages appear in the receiver
