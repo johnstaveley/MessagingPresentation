@@ -7,7 +7,7 @@ namespace RabbitReceiver
 	class Program
 	{
 
-		static void Main(string[] args)
+		static void Main()
 		{
 			var queueName = "LargeProducts";
 			Console.Title = "RabbitMQ Large Product Receiver";
@@ -25,7 +25,7 @@ namespace RabbitReceiver
 				Console.WriteLine($"Received message with body {body}");
 				channel.BasicAck(ea.DeliveryTag, false);
 			};
-			String consumerTag = channel.BasicConsume(queueName, false, consumer);
+			channel.BasicConsume(queueName, false, consumer);
 			Console.ReadKey();
 			channel.Close(200, "Goodbye");
 			conn.Close();

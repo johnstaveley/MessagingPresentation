@@ -11,12 +11,14 @@ namespace RabbitSender
 		};
 
 
-		static void Main(string[] args)
+		static void Main()
 		{
 			var exchangeName = "Products";
 			Console.Title = "RabbitMQ Sender";
-			Console.WriteLine("Press space to start sending messages");
-			Console.ReadKey();
+#if DEBUG
+			//Console.WriteLine("Press space to start sending messages");
+			//Console.ReadKey();
+#endif
 			ConnectionFactory factory = new ConnectionFactory
 			{
 				Uri = "amqp://user:LeedsSharp4@192.168.99.100:5672/vhost"
@@ -34,7 +36,9 @@ namespace RabbitSender
 				counter++;
 				Thread.Sleep(1000);
 			} while (counter < 100);
-			Console.ReadKey();
+#if DEBUG
+			//Console.ReadKey();
+#endif
 			channel.Close(200, "Goodbye");
 			conn.Close();
 			

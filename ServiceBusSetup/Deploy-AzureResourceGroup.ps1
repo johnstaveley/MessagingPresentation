@@ -3,21 +3,13 @@
     Deploys a template to Azure
 
  .DESCRIPTION
-    Deploys an Azure Resource ReadWriter template
+    Deploys an Azure Resource Manager template
 
 #>
 
-param(
- 
- [string]
- $subscriptionId = "a0d704f5-f3ad-49cb-ad02-bda68d45ed1f",
-
- [string]
- $resourceGroupLocation = "uksouth",
-
- [string]
- $environmentName = "LeedsSharp2"
-)
+$subscriptionId = "a0d704f5-f3ad-49cb-ad02-bda68d45ed1f"
+$resourceGroupLocation = "uksouth"
+$environmentName = "LeedsSharp2"
 
 <#
 .SYNOPSIS
