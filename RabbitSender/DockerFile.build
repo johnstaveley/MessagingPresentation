@@ -1,8 +1,10 @@
 ﻿FROM microsoft/aspnetcore-build
+MAINTAINER John Staveley
 WORKDIR /app
 
 COPY *.csproj .
 RUN dotnet restore
 
 COPY . .
+RUN rm -rf publish
 RUN dotnet publish --output /out/ --configuration Release

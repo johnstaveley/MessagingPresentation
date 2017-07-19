@@ -16,8 +16,8 @@ namespace RabbitSender
 			var exchangeName = "Products";
 			Console.Title = "RabbitMQ Sender";
 #if DEBUG
-			//Console.WriteLine("Press space to start sending messages");
-			//Console.ReadKey();
+			Console.WriteLine("Press space to start sending messages");
+			Console.ReadKey();
 #endif
 			ConnectionFactory factory = new ConnectionFactory
 			{
@@ -37,7 +37,7 @@ namespace RabbitSender
 				Thread.Sleep(1000);
 			} while (counter < 100);
 #if DEBUG
-			//Console.ReadKey();
+			Console.ReadKey();
 #endif
 			channel.Close(200, "Goodbye");
 			conn.Close();
