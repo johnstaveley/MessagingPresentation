@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASBSender", "ASBSender\ASBSender.csproj", "{7EB04125-0CD7-4F54-8947-B151E30C6A44}"
 EndProject
@@ -24,6 +24,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{111C
 		Scripts\Calculate Factors.txt = Scripts\Calculate Factors.txt
 		Scripts\Configure RabbitMQ.ps1 = Scripts\Configure RabbitMQ.ps1
 		Scripts\Demo Notes.doc = Scripts\Demo Notes.doc
+		Scripts\docker-compose.yml = Scripts\docker-compose.yml
 		Scripts\Hit Azure Apis.ps1 = Scripts\Hit Azure Apis.ps1
 	EndProjectSection
 EndProject
