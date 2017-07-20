@@ -1,6 +1,7 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
+using System.Threading;
 
 namespace RabbitReceiver
 {
@@ -26,7 +27,12 @@ namespace RabbitReceiver
 				channel.BasicAck(ea.DeliveryTag, false);
 			};
 			channel.BasicConsume(queueName, false, consumer);
-			Console.ReadKey();
+			int counter = 0;
+			while (counter < 1000)
+			{
+				Thread.Sleep(5000);
+				counter++;
+			}
 			channel.Close(200, "Goodbye");
 			conn.Close();
 		}

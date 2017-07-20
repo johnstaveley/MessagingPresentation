@@ -1,0 +1,5 @@
+﻿FROM microsoft/aspnetcore
+MAINTAINER John Staveley
+WORKDIR /app
+COPY ./publish .
+ENTRYPOINT ["dotnet", "RabbitReceiver.dll"]
