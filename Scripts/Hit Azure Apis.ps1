@@ -2,9 +2,11 @@
 # Choose a demo and number of jobs to send
 $demo = "azure storage queue demo site"
 $url = "https://messagepresentation1.azurewebsites.net/api/HttpFactorNumber?code=FvIRVuQPMudzLfaryK8dEBqtUFzbJI1sglrvWYZedMUUlgI0d8M9VA=="
+$url = "https://messagepresentation1.azurewebsites.net/api/ReceiveNumberToBeFactored"
 
-$demo = "azure service bus demo site"
-$url = "https://messagepresentation1.azurewebsites.net/api/ReceiveNumberToBeFactored?code=yH7hsOlPkMI/M6T3h7Kn4mUJXZwrcbZQGvw49VJRr07jqKvQqj4leg=="
+
+#$demo = "azure service bus demo site"
+#$url = "https://messagepresentation1.azurewebsites.net/api/ReceiveNumberToBeFactored?code=yH7hsOlPkMI/M6T3h7Kn4mUJXZwrcbZQGvw49VJRr07jqKvQqj4leg=="
 
 $randomNumber = Get-Random -minimum 1 -maximum 9999999999
 
