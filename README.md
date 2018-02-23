@@ -2,7 +2,7 @@
 Supporting files and code for messaging presentation at Leeds Sharp 27/07/2017
 
 ## Demo 1: Azure Storage Queues and Azure Functions
-* TODO: Azure functions and queues need to be pre-setup on Azure. 
+* TODO: Azure functions and queues need to be pre-setup on Azure. However source code is in the scripts folder
 * The script 'Hit Azure Apis.ps1' is used to demo a single hit on the http site and multiple hits on an http site backed by a queue.
 * The project ASQFactoredNumbersReceiver can be run in the background to receive the factored numbers from the processed queue.
 
