@@ -81,7 +81,6 @@
       "location": "UK South",
       "scale": null,
       "properties": {
-        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
         "maxSizeInMegabytes": 1024,
         "requiresDuplicateDetection": false,
         "enableBatchedOperations": true,
@@ -101,7 +100,6 @@
           "transferDeadLetterMessageCount": 0
         },
         "subscriptionCount": 4,
-        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
         "enablePartitioning": false,
         "isExpress": false,
         "enableSubscriptionPartitioning": false,
@@ -118,9 +116,7 @@
       "location": "UK South",
       "scale": null,
       "properties": {
-        "lockDuration": "00:01:00",
         "requiresSession": false,
-        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
         "deadLetteringOnMessageExpiration": false,
         "deadLetteringOnFilterEvaluationExceptions": false,
         "messageCount": 0,
@@ -134,7 +130,6 @@
           "transferMessageCount": 0,
           "transferDeadLetterMessageCount": 0
         },
-        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
         "entityAvailabilityStatus": "Available"
       },
       "dependsOn": [
@@ -167,9 +162,7 @@
       "location": "UK South",
       "scale": null,
       "properties": {
-        "lockDuration": "00:01:00",
         "requiresSession": false,
-        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
         "deadLetteringOnMessageExpiration": false,
         "deadLetteringOnFilterEvaluationExceptions": false,
         "messageCount": 0,
@@ -186,7 +179,6 @@
           "transferMessageCount": 0,
           "transferDeadLetterMessageCount": 0
         },
-        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
         "entityAvailabilityStatus": "Available"
       },
       "dependsOn": [
@@ -219,9 +211,7 @@
       "location": "UK South",
       "scale": null,
       "properties": {
-        "lockDuration": "00:01:00",
         "requiresSession": false,
-        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
         "deadLetteringOnMessageExpiration": false,
         "deadLetteringOnFilterEvaluationExceptions": false,
         "messageCount": 0,
@@ -238,7 +228,6 @@
           "transferMessageCount": 0,
           "transferDeadLetterMessageCount": 0
         },
-        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
         "entityAvailabilityStatus": "Available"
       },
       "dependsOn": [
@@ -271,9 +260,7 @@
       "location": "UK South",
       "scale": null,
       "properties": {
-        "lockDuration": "00:01:00",
         "requiresSession": false,
-        "defaultMessageTimeToLive": "10675199.02:48:05.4775807",
         "deadLetteringOnMessageExpiration": false,
         "deadLetteringOnFilterEvaluationExceptions": false,
         "messageCount": 130,
@@ -290,7 +277,6 @@
           "transferMessageCount": 0,
           "transferDeadLetterMessageCount": 0
         },
-        "autoDeleteOnIdle": "10675199.02:48:05.4775807",
         "entityAvailabilityStatus": "Available"
       },
       "dependsOn": [

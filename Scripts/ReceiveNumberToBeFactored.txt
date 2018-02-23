@@ -1,0 +1,21 @@
+using System.Net;
+using System.Threading;
+
+public static async Task Run(HttpRequestMessage req, TraceWriter log, ICollector<string> outQueueItem)
+{
+    log.Info("C# HTTP trigger function processed a request.");
+
+    // parse query parameter
+    long? number = Convert.ToInt64(req.GetQueryNameValuePairs()
+        .FirstOrDefault(q => string.Compare(q.Key, "number", true) == 0)
+        .Value);
+
+    // Get request body    
+    dynamic data = await req.Content.ReadAsAsync<object>();
+
+    // Set name to query string or body data
+    number = (number == 0 ? data?.number : null);
+
+    log.Info("Received " + number);
+    outQueueItem.Add(number.ToString());
+}

@@ -76,7 +76,6 @@ if(!$resourceGroup)
     Start-Sleep(5) # Give it some time to create the resource group
 }
 else{
-    Write-Host "Using existing resource group '$resourceGroupName'";
 }
 
 # Start the deployment
