@@ -11,8 +11,7 @@ namespace ASBSender
 
 		private const string TopicName = "Products";
 		private static readonly string[] Colours = { "Green", "Blue", "Red", "Orange", "Pink", "Yellow", "Black", "White" };
-		private static readonly string[] Size = {
-			"Small", "Medium", "Large"
+		private static readonly string[] Size = { "Small", "Medium", "Large"
 		};
 
 		static void Main()
