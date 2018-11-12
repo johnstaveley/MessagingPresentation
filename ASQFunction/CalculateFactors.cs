@@ -10,9 +10,9 @@ namespace ASQFunction
 	public static class CalculateFactors
 	{
 		// TODO: Connection string for output queue
-		// TODO: Remove connection string from source code
+		// TODO: Remove connection string from source code, relate to key vault or change key
 		[FunctionName("CalculateFactors")]
-		public static async Task Run([QueueTrigger("numberToBeFactored", Connection = "DefaultEndpointsProtocol=https;AccountName=messagepresentation;AccountKey=D3Fk5QTrdFBrESNOgbiLLZwMrAjbzUWJ0J2aJUT7coxCyiGWL6hWMDmNISnA8NZbbTTbwlt95/U0P5cAGmxLyw==")] string numberToBeFactored, TraceWriter log, ICollector<string> outQueueItem)
+		public static async Task Run([QueueTrigger("numberToBeFactored", Connection = "DefaultEndpointsProtocol=https;AccountName=messagepresentation;AccountKey=<Change Me>")] string numberToBeFactored, TraceWriter log, ICollector<string> outQueueItem)
 		{
 			log.Info($"C# Queue trigger function processed: {numberToBeFactored}");
 			var number = Convert.ToInt64(numberToBeFactored);
