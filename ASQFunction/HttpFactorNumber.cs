@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using Microsoft.Extensions.Logging;
 
 namespace ASQFunction
 {
@@ -16,9 +17,9 @@ namespace ASQFunction
 	{
 
 	    [FunctionName("HttpFactorNumber")]
-	    public static IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequest req, TraceWriter log)
+	    public static IActionResult Run([HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)]HttpRequest req, ILogger log)
 	    {
-		    log.Info("C# HTTP trigger function processed a request to factor a number");
+		    log.LogInformation("C# HTTP trigger function processed a request to factor a number");
 
 		    // parse query parameter
 		    long? number = Convert.ToInt64(req.Query["number"]);

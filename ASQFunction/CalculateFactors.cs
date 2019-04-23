@@ -1,26 +1,23 @@
 using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace ASQFunction
 {
-	public static class CalculateFactors
+    public static class CalculateFactors
 	{
-		// TODO: Connection string for output queue
-		// TODO: Remove connection string from source code, relate to key vault or change key
 		[FunctionName("CalculateFactors")]
-		public static async Task Run([QueueTrigger("numberToBeFactored", Connection = "DefaultEndpointsProtocol=https;AccountName=messagepresentation;AccountKey=<Change Me>")] string numberToBeFactored, TraceWriter log, ICollector<string> outQueueItem)
+		public static void Run([QueueTrigger("numberToBeFactored", Connection = "AzureWebJobsStorage")] string numberToBeFactored, ILogger log, [Queue("factorednumbers", Connection = "AzureWebJobsStorage")] ICollector<string> outQueueItem)
 		{
-			log.Info($"C# Queue trigger function processed: {numberToBeFactored}");
+			log.LogInformation($"C# Queue trigger function processed: {numberToBeFactored}");
 			var number = Convert.ToInt64(numberToBeFactored);
 			var factors = Factor(number);
 			var returnString = "Hello " + number + " you have " + factors.Count + " factors. The factors are: ";
 			factors.OrderBy(b => b).ToList().ForEach(a => returnString += a.ToString() + ", ");
 			returnString = returnString.Trim(' ').Trim(',');
-			log.Info(returnString);
+			log.LogInformation(returnString);
 			outQueueItem.Add(returnString);
 		}
 

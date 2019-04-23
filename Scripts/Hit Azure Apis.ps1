@@ -1,8 +1,11 @@
 ﻿
 # Choose a demo and number of jobs to send
 $demo = "azure storage queue demo site"
+#$url = "http://localhost:7071/api/HttpFactorNumber"
+
 $url = "https://messagepresentation1.azurewebsites.net/api/HttpFactorNumber?code=FvIRVuQPMudzLfaryK8dEBqtUFzbJI1sglrvWYZedMUUlgI0d8M9VA=="
 $url = "https://messagepresentation1.azurewebsites.net/api/ReceiveNumberToBeFactored"
+$url = "http://localhost:7071/api/ReceiveNumberToBeFactored"
 
 
 #$demo = "azure service bus demo site"
@@ -10,7 +13,7 @@ $url = "https://messagepresentation1.azurewebsites.net/api/ReceiveNumberToBeFact
 
 $randomNumber = Get-Random -minimum 1 -maximum 9999999999
 
-$maxConcurrentJobs = 1
+$maxConcurrentJobs = 10
 # End of user defined variables 
 
 if ($maxConcurrentJobs -eq 1) {
