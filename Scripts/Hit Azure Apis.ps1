@@ -4,12 +4,12 @@ $demo = "azure storage queue demo site"
 #$url = "http://localhost:7071/api/HttpFactorNumber"
 #$url = "http://localhost:7071/api/ReceiveNumberToBeFactored"
 
-#$url = "https://messagepresentation.azurewebsites.net/api/HttpFactorNumber"
-$url = "https://messagepresentation.azurewebsites.net/api/ReceiveNumberToBeFactored"
+$url = "https://messagepresentation.azurewebsites.net/api/HttpFactorNumber"
+#$url = "https://messagepresentation.azurewebsites.net/api/ReceiveNumberToBeFactored"
 
 $randomNumber = Get-Random -minimum 1 -maximum 9999999999
 
-$maxConcurrentJobs = 1
+$maxConcurrentJobs = 10
 # End of user defined variables 
 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'

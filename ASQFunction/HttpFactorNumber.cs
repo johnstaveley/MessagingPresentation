@@ -2,18 +2,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using Microsoft.Extensions.Logging;
 
 namespace ASQFunction
 {
-	public static class HttpFactorNumber
+    public static class HttpFactorNumber
 	{
 
 	    [FunctionName("HttpFactorNumber")]

@@ -24,21 +24,8 @@ Function RegisterRP {
     Register-AzureRmResourceProvider -ProviderNamespace $ResourceProviderNamespace;
 }
 
-function Check-Session () {
-    $Error.Clear()
-    #if context already exist
-    Get-AzureRmContext -ErrorAction Continue
-    $Error
-    foreach ($eachError in $Error) {
-        if ($eachError.Exception.ToString() -like "*Run Login-AzureRmAccount to login.*") {
-            Login-AzureRmAccount
-        }
-    }
-    $Error.Clear();
-}
-
 # Setup variables
-$workingDirectory = "C:\Work\MessagingPresentation\ServiceBusSetup\"
+$workingDirectory = "D:\Work\MessagingPresentation\ServiceBusSetup\"
 $parametersFile = "azuredeploy.parameters.json"
 $templateFile = "azuredeploy.json"
 $templateFilePath = $workingDirectory + $templateFile
@@ -47,8 +34,11 @@ $resourceGroupName = $environmentName
 $ErrorActionPreference = "Stop"
 
 # sign in
-Write-Host "Logging in...";
-Check-Session
+# Disconnect-AzureRmAccount # if already connected
+if ([string]::IsNullOrEmpty($(Get-AzureRmContext).Account)) { 
+    Write-Host "Logging in...";
+    Login-AzureRmAccount 
+}
 
 # select subscription
 Write-Host "Selecting subscription '$subscriptionId'";
