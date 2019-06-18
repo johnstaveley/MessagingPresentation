@@ -21,7 +21,7 @@ namespace RabbitSender
 #endif
 			ConnectionFactory factory = new ConnectionFactory
 			{
-				Uri = "amqp://user:LeedsSharp4@192.168.99.100:5672/vhost"
+				Uri = new Uri("amqp://user:LeedsSharp4@192.168.99.100:5672/vhost")
 			};
 
 			IConnection conn = factory.CreateConnection();
